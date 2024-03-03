@@ -24,6 +24,8 @@ interface UserProfile {
 export class HomeComponent implements OnInit {
   private readonly httpClient = inject(HttpClient);
   dataFromAzureProtectedApi$: Observable<string[]>;
+  downstreamApiData$: Observable<string[]>;
+
   dataGraphApiCalls$: Observable<string[]>;
   userProfileClaims$: Observable<UserProfile>;
 
@@ -41,6 +43,12 @@ export class HomeComponent implements OnInit {
   getDirectApiData() {
     this.dataFromAzureProtectedApi$ = this.httpClient.get<string[]>(
       `${this.getCurrentHost()}/api/DirectApi`
+    );
+  }
+
+  getDownstreamApiData() {
+    this.downstreamApiData$ = this.httpClient.get<string[]>(
+      `${this.getCurrentHost()}/api/Downstream`
     );
   }
 

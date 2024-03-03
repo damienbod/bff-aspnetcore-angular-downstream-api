@@ -5,6 +5,9 @@
 >
   <div *ngIf="userProfileClaims?.isAuthenticated; else noAuth">
     <button (click)="getDirectApiData()">get data from API direct</button>
+    <button (click)="getDownstreamApiData()">
+      get data from downstream API
+    </button>
     <form method="post" action="api/Account/Logout">
       <button class="btn btn-link" type="submit">Sign out</button>
     </form>
@@ -20,17 +23,8 @@
   <h2>get direct data using API:</h2>
   <pre>{{ dataFromAzureProtectedApi$ | async | json }}</pre>
 
-  // should be blocked
-
-  <iframe
-    width="1009"
-    height="568"
-    src="https://www.youtube.com/embed/31InoJvyCSA"
-    title="ASP.NET Community Standup - Securing ASP.NET Core APIs"
-    frameborder="0"
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-    allowfullscreen
-  ></iframe>
+  <h2>get downstream data using API:</h2>
+  <pre>{{ downstreamApiData$ | async | json }}</pre>
 </ng-container>
 
 <ng-template #noAuth>
