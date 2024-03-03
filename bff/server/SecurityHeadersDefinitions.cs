@@ -24,19 +24,18 @@ public static class SecurityHeadersDefinitions
                 builder.AddFormAction().Self().From(idpHost);
                 builder.AddFontSrc().Self();
                 builder.AddBaseUri().Self();
-                builder.AddFrameAncestors().None();
 
-                if (isDev)
-                {
-                    builder.AddStyleSrc().Self().UnsafeInline();
-                }
-                else
-                {
-                    builder.AddStyleSrc().WithNonce().UnsafeInline();
-                }
-                
+                builder.AddFrameAncestors()
+                    .From("https://localhost:5001");
 
-                builder.AddScriptSrc().WithNonce().UnsafeInline();
+
+                builder.AddStyleSrc()
+                    .Self()
+                    .UnsafeInline();
+ 
+                builder.AddScriptSrc()
+                    .WithNonce()
+                    .UnsafeInline();
             })
             .RemoveServerHeader()
             .AddPermissionsPolicy(builder =>
