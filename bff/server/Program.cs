@@ -32,16 +32,6 @@ services.AddOptions();
 
 var stsServer = configuration["OpenIDConnectSettings:Authority"];
 
-// https://play.google.com
-builder.Services.AddCors(options =>
-{
-    options.AddPolicy("playgooglecors",
-        policy =>
-        {
-            policy.WithOrigins("https://play.google.com");
-        });
-});
-
 services.AddAuthentication(options =>
 {
     options.DefaultScheme = CookieAuthenticationDefaults.AuthenticationScheme;
@@ -98,8 +88,6 @@ else
 
 app.UseSecurityHeaders(SecurityHeadersDefinitions
     .GetHeaderPolicyCollection(env.IsDevelopment(), stsServer));
-
-app.UseCors("playgooglecors");
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
