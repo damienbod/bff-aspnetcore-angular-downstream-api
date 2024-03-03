@@ -12,10 +12,13 @@ public static class SecurityHeadersDefinitions
         var policy = new HeaderPolicyCollection()
             .AddFrameOptionsDeny()
             .AddContentTypeOptionsNoSniff()
+
             .AddReferrerPolicyStrictOriginWhenCrossOrigin()
             .AddCrossOriginOpenerPolicy(builder => builder.SameOrigin())
             .AddCrossOriginResourcePolicy(builder => builder.SameOrigin())
-            .AddCrossOriginEmbedderPolicy(builder => builder.RequireCorp()) // remove for dev if using hot reload
+            // removed for vimeo, weak security...
+            //.AddCrossOriginEmbedderPolicy(builder => builder.RequireCorp())
+
             .AddContentSecurityPolicy(builder =>
             {
                 builder.AddObjectSrc().None();
@@ -24,19 +27,18 @@ public static class SecurityHeadersDefinitions
                 builder.AddFormAction().Self().From(idpHost);
                 builder.AddFontSrc().Self();
                 builder.AddBaseUri().Self();
-                builder.AddFrameAncestors().None();
 
-                if (isDev)
-                {
-                    builder.AddStyleSrc().Self().UnsafeInline();
-                }
-                else
-                {
-                    builder.AddStyleSrc().WithNonce().UnsafeInline();
-                }
-                
+                builder.AddFrameAncestors()
+                    .From("https://localhost:5001");
 
-                builder.AddScriptSrc().WithNonce().UnsafeInline();
+                builder.AddStyleSrc()
+                    .Self()
+                    .UnsafeInline();
+
+                // disable for video stream, weak security...
+                //builder.AddScriptSrc()
+                //    .WithNonce()
+                //    .UnsafeInline();
             })
             .RemoveServerHeader()
             .AddPermissionsPolicy(builder =>
