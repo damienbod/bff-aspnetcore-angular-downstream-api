@@ -1,4 +1,6 @@
+using Microsoft.IdentityModel.JsonWebTokens;
 using Microsoft.IdentityModel.Logging;
+using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 
 namespace Api;
@@ -9,6 +11,21 @@ internal static class StartupExtensions
     {
         var services = builder.Services;
         var configuration = builder.Configuration;
+
+        services.AddAuthentication()
+            .AddJwtBearer(options =>
+            {
+                options.Audience = "rs_dataEventRecordsApi";
+                options.Authority = "https://localhost:44318";
+                options.TokenValidationParameters = new TokenValidationParameters
+                {
+                    ValidateIssuer = true,
+                    ValidateAudience = true,
+                    ValidateIssuerSigningKey = true,
+                    ValidAudiences = ["rs_dataEventRecordsApi"],
+                    ValidIssuers = ["https://localhost:44318"],
+                };
+            });
 
         services.AddControllers();
         services.AddSwaggerGen(c =>
@@ -21,6 +38,8 @@ internal static class StartupExtensions
     
     public static WebApplication ConfigurePipeline(this WebApplication app)
     {
+        JsonWebTokenHandler.DefaultInboundClaimTypeMap.Clear();
+        // Do not add to deployments, for debug reasons
         IdentityModelEventSource.ShowPII = true;
 
         if (app.Environment.IsDevelopment())
@@ -35,6 +54,7 @@ internal static class StartupExtensions
         app.UseRouting();
 
         app.UseAuthorization();
+        app.UseAuthentication();
 
         app.MapControllers();
 
