@@ -1,4 +1,5 @@
 ﻿using RazorPageOidcClient;
+using System.Net.Http.Headers;
 using Yarp.ReverseProxy.Transforms;
 using Yarp.ReverseProxy.Transforms.Builder;
 
@@ -6,26 +7,28 @@ namespace BffOpenIddict.Server.ApiClient;
 
 public class JwtTransformProvider : ITransformProvider
 {
-    private readonly ApiService _apiService;
+    private readonly ApiTokenCacheClient _apiTokenClient;
 
-    public JwtTransformProvider(ApiService apiService)
+    public JwtTransformProvider(ApiTokenCacheClient apiTokenClient)
     {
-        _apiService = apiService;
+        _apiTokenClient = apiTokenClient;
     }
 
     public void Apply(TransformBuilderContext context)
     {
-        if(context.Route.RouteId == "downstreamapiroute") 
+        if (context.Route.RouteId == "downstreamapiroute")
         {
-            _apiService.
-            context.AddRequestTransform(transformContext =>
+            context.AddRequestTransform(async transformContext =>
             {
-                transformContext.ProxyRequest
-                    .Options
-                    .Set(new HttpRequestOptionsKey<string>("CustomMetadata"), value);
+                var access_token = await _apiTokenClient.GetApiToken(
+                    "CC",
+                    "dataEventRecords",
+                    "cc_secret");
 
-                return default;
+                transformContext.ProxyRequest.Headers.Authorization 
+                    = new AuthenticationHeaderValue("Bearer", access_token);
             });
+        }
     }
 
     public void ValidateCluster(TransformClusterValidationContext context)

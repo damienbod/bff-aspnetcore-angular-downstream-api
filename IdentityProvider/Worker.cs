@@ -67,6 +67,24 @@ public class Worker : IHostedService
                     }
                 });
             }
+
+            // API application CC
+            if (await manager.FindByClientIdAsync("CC") == null)
+            {
+                await manager.CreateAsync(new OpenIddictApplicationDescriptor
+                {
+                    ClientId = "CC",
+                    ClientSecret = "cc_secret",
+                    DisplayName = "CC for protected API",
+                    Permissions =
+                    {
+                        Permissions.Endpoints.Authorization,
+                        Permissions.Endpoints.Token,
+                        Permissions.GrantTypes.ClientCredentials,
+                        Permissions.Prefixes.Scope + "dataEventRecords"
+                    }
+                });
+            }
         }
 
         static async Task RegisterScopesAsync(IServiceProvider provider)
