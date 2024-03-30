@@ -1,12 +1,18 @@
 ﻿using BffOpenIddict.Server;
+using BffOpenIddict.Server.ApiClient;
 using BffOpenIddict.Server.Services;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authentication.OpenIdConnect;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.JsonWebTokens;
 using Microsoft.IdentityModel.Logging;
 using Microsoft.IdentityModel.Protocols.OpenIdConnect;
 using Microsoft.IdentityModel.Tokens;
+using RazorPageOidcClient;
+using System.Net.Security;
+using System.Runtime.ConstrainedExecution;
+using System.Security.Cryptography.X509Certificates;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -67,8 +73,12 @@ services.AddRazorPages().AddMvcOptions(options =>
     //options.Filters.Add(new AuthorizeFilter(policy));
 });
 
+builder.Services.AddTransient<ApiService>();
+builder.Services.AddSingleton<ApiTokenCacheClient>();
+
 builder.Services.AddReverseProxy()
-   .LoadFromConfig(builder.Configuration.GetSection("ReverseProxy"));
+   .LoadFromConfig(builder.Configuration.GetSection("ReverseProxy"))
+   .AddTransforms<JwtTransformProvider>();
 
 var app = builder.Build();
 
