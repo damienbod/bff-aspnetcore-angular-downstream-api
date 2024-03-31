@@ -24,7 +24,7 @@ public class JwtTransformProvider : ITransformProvider
                     "dataEventRecords",
                     "cc_secret");
 
-                transformContext.ProxyRequest.Headers.Authorization 
+                transformContext.ProxyRequest.Headers.Authorization
                     = new AuthenticationHeaderValue("Bearer", access_token);
             });
         }

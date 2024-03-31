@@ -35,7 +35,7 @@ internal static class StartupExtensions
 
         return builder.Build();
     }
-    
+
     public static WebApplication ConfigurePipeline(this WebApplication app)
     {
         JsonWebTokenHandler.DefaultInboundClaimTypeMap.Clear();
