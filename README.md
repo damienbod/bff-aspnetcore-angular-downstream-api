@@ -56,3 +56,5 @@ https://github.com/damienbod/bff-azureadb2c-aspnetcore-angular
 https://github.com/damienbod/bff-aspnetcore-vuejs
 
 https://github.com/damienbod/bff-MicrosoftEntraExternalID-aspnetcore-angular
+
+https://microsoft.github.io/reverse-proxy/articles/transforms.html
