@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace DownstreamApi.Controllers;
 
-[Authorize]
+[Authorize(AuthenticationSchemes = "Bearer")]
 [ApiController]
 [Route("api/[controller]")]
 public class DownstreamController : ControllerBase

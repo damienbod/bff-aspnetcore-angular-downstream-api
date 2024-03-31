@@ -13,17 +13,17 @@ internal static class StartupExtensions
         var configuration = builder.Configuration;
 
         services.AddAuthentication()
-            .AddJwtBearer(options =>
+            .AddJwtBearer("Bearer", options =>
             {
                 options.Audience = "rs_dataEventRecordsApi";
-                options.Authority = "https://localhost:44318";
+                options.Authority = "https://localhost:44318/";
                 options.TokenValidationParameters = new TokenValidationParameters
                 {
                     ValidateIssuer = true,
                     ValidateAudience = true,
                     ValidateIssuerSigningKey = true,
                     ValidAudiences = ["rs_dataEventRecordsApi"],
-                    ValidIssuers = ["https://localhost:44318"],
+                    ValidIssuers = ["https://localhost:44318/"],
                 };
             });
 
