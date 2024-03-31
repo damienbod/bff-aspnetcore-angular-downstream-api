@@ -73,7 +73,6 @@ services.AddRazorPages().AddMvcOptions(options =>
     //options.Filters.Add(new AuthorizeFilter(policy));
 });
 
-builder.Services.AddTransient<ApiService>();
 builder.Services.AddSingleton<ApiTokenCacheClient>();
 
 builder.Services.AddReverseProxy()

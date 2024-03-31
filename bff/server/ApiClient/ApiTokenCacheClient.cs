@@ -1,5 +1,6 @@
 ﻿using IdentityModel.Client;
 using Microsoft.Extensions.Caching.Distributed;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Options;
 
 namespace RazorPageOidcClient;
@@ -8,11 +9,10 @@ public class ApiTokenCacheClient
 {
     private readonly ILogger<ApiTokenCacheClient> _logger;
     private readonly HttpClient _httpClient;
-    private readonly IOptions<AuthConfigurations> _authConfigurations;
 
     private static readonly object _lock = new();
     private readonly IDistributedCache _cache;
-
+    private readonly IConfiguration _configuration;
     private const int cacheExpirationInDays = 1;
 
     private class AccessTokenItem
@@ -22,15 +22,15 @@ public class ApiTokenCacheClient
     }
 
     public ApiTokenCacheClient(
-        IOptions<AuthConfigurations> authConfigurations,
         IHttpClientFactory httpClientFactory,
         ILoggerFactory loggerFactory,
+        IConfiguration configuration,
         IDistributedCache cache)
     {
-        _authConfigurations = authConfigurations;
         _httpClient = httpClientFactory.CreateClient();
         _logger = loggerFactory.CreateLogger<ApiTokenCacheClient>();
         _cache = cache;
+        _configuration = configuration;
     }
 
     public async Task<string> GetApiToken(string api_name, string api_scope, string secret)
@@ -64,7 +64,7 @@ public class ApiTokenCacheClient
         {
             var disco = await HttpClientDiscoveryExtensions.GetDiscoveryDocumentAsync(
                 _httpClient,
-                _authConfigurations.Value.StsServer);
+                _configuration["OpenIDConnectSettings:Authority"]);
 
             if (disco.IsError)
             {
