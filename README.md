@@ -58,3 +58,5 @@ https://github.com/damienbod/bff-aspnetcore-vuejs
 https://github.com/damienbod/bff-MicrosoftEntraExternalID-aspnetcore-angular
 
 https://microsoft.github.io/reverse-proxy/articles/transforms.html
+
+https://github.com/microsoft/reverse-proxy/tree/main/samples/ReverseProxy.Transforms.Sample
