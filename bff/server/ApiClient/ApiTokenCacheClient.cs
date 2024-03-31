@@ -1,9 +1,7 @@
 ﻿using IdentityModel.Client;
 using Microsoft.Extensions.Caching.Distributed;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.Options;
 
-namespace RazorPageOidcClient;
+namespace BffOpenIddict.Server.ApiClient;
 
 public class ApiTokenCacheClient
 {

@@ -1,5 +1,4 @@
-﻿using RazorPageOidcClient;
-using System.Net.Http.Headers;
+﻿using System.Net.Http.Headers;
 using Yarp.ReverseProxy.Transforms;
 using Yarp.ReverseProxy.Transforms.Builder;
 
