@@ -32,11 +32,9 @@ public class JwtTransformProvider : ITransformProvider
 
     public void ValidateCluster(TransformClusterValidationContext context)
     {
-        var route = context.Cluster;
     }
 
     public void ValidateRoute(TransformRouteValidationContext context)
     {
-        var route = context.Route;
     }
 }
