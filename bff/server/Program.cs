@@ -106,14 +106,7 @@ app.MapRazorPages();
 app.MapControllers();
 app.MapNotFound("/api/{**segment}");
 
-if (app.Environment.IsDevelopment())
-{
-    var uiDevServer = app.Configuration.GetValue<string>("UiDevServerUrl");
-    if (!string.IsNullOrEmpty(uiDevServer))
-    {
-        app.MapReverseProxy();
-    }
-}
+app.MapReverseProxy();
 
 app.MapFallbackToPage("/_Host");
 
