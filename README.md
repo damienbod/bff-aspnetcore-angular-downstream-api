@@ -1,4 +1,6 @@
-# OpenIddict BFF security architecture using ASP.NET Core and nx Angular standalone
+# BFF secured ASP.NET Core application using downstream API and an OAuth client credentials JWT
+
+__OpenID Connect confidential client code flow with PKCE__
 
 __downstream API with OAuth client credentials flow__
 
