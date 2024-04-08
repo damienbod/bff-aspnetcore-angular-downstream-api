@@ -42,9 +42,9 @@ services.AddAuthentication(options =>
 .AddOpenIdConnect(options =>
 {
     configuration.GetSection("OpenIDConnectSettings").Bind(options);
-    options.Authority = configuration["OpenIDConnectSettings:Authority"];
-    options.ClientId = configuration["OpenIDConnectSettings:ClientId"];
-    options.ClientSecret = configuration["OpenIDConnectSettings:ClientSecret"];
+    //options.Authority = configuration["OpenIDConnectSettings:Authority"];
+    //options.ClientId = configuration["OpenIDConnectSettings:ClientId"];
+    //options.ClientSecret = configuration["OpenIDConnectSettings:ClientSecret"];
 
     options.SignInScheme = CookieAuthenticationDefaults.AuthenticationScheme;
     options.ResponseType = OpenIdConnectResponseType.Code;
