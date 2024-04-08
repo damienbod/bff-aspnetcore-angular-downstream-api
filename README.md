@@ -38,7 +38,7 @@ Or just open Visual Studio and run the solution.
 
 ## History
 
-- 2024-04-01 Updated API
+- 2024-04-08 Updated API
 - 2024-03-24 Updated packages
 - 2024-01-22 Updated packages
 - 2023-12-30 Open Redirect protection for login
