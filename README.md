@@ -4,6 +4,8 @@ __OpenID Connect confidential client code flow with PKCE__
 
 __downstream API with OAuth client credentials flow__
 
+https://damienbod.com/2024/04/08/bff-secured-asp-net-core-application-using-downstream-api-and-an-oauth-client-credentials-jwt/
+
 [![.NET and npm build](https://github.com/damienbod/bff-aspnetcore-angular-downstream-api/actions/workflows/dotnet.yml/badge.svg)](https://github.com/damienbod/bff-aspnetcore-angular-downstream-api/actions/workflows/dotnet.yml) [![License](https://img.shields.io/badge/license-Apache%20License%202.0-blue.svg)](https://github.com/damienbod/bff-openiddict-aspnetcore-angular/blob/main/bff/LICENSE)
 
 ![image.png](images/context.svg)
