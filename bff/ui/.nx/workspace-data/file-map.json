@@ -1,0 +1,312 @@
+{
+  "version": "6.0",
+  "nxVersion": "19.6.5",
+  "deps": {
+    "@angular/animations": "18.2.3",
+    "@angular/common": "18.2.3",
+    "@angular/compiler": "18.2.3",
+    "@angular/core": "18.2.3",
+    "@angular/forms": "18.2.3",
+    "@angular/platform-browser": "18.2.3",
+    "@angular/platform-browser-dynamic": "18.2.3",
+    "@angular/router": "18.2.3",
+    "@nx/angular": "19.6.5",
+    "rxjs": "~7.8.0",
+    "tslib": "^2.3.0",
+    "zone.js": "0.14.4",
+    "@angular-devkit/build-angular": "18.2.3",
+    "@angular-devkit/core": "18.2.3",
+    "@angular-devkit/schematics": "18.2.3",
+    "@angular-eslint/eslint-plugin": "18.0.1",
+    "@angular-eslint/eslint-plugin-template": "18.0.1",
+    "@angular-eslint/template-parser": "18.0.1",
+    "@angular/cli": "~17.0.0",
+    "@angular/compiler-cli": "18.2.3",
+    "@angular/language-service": "18.2.3",
+    "@nx/eslint-plugin": "19.6.5",
+    "@nx/jest": "19.6.5",
+    "@nx/js": "19.6.5",
+    "@nx/playwright": "19.6.5",
+    "@nx/workspace": "19.6.5",
+    "@playwright/test": "^1.36.0",
+    "@schematics/angular": "18.2.3",
+    "@types/jest": "29.5.12",
+    "@types/node": "^18.16.9",
+    "@typescript-eslint/eslint-plugin": "7.16.0",
+    "@typescript-eslint/parser": "7.16.0",
+    "eslint": "8.57.0",
+    "eslint-config-prettier": "9.0.0",
+    "eslint-plugin-playwright": "^0.15.3",
+    "jest": "29.7.0",
+    "jest-environment-jsdom": "29.7.0",
+    "jest-preset-angular": "14.1.1",
+    "nx": "19.6.5",
+    "prettier": "^2.6.2",
+    "ts-jest": "^29.1.0",
+    "ts-node": "10.9.1",
+    "typescript": "5.5.4",
+    "@nx/eslint": "19.6.5"
+  },
+  "pathMappings": {},
+  "nxJsonPlugins": [],
+  "fileMap": {
+    "nonProjectFiles": [],
+    "projectFileMap": {
+      "ui": [
+        {
+          "file": ".eslintignore",
+          "hash": "7663861978715868291"
+        },
+        {
+          "file": ".eslintrc.base.json",
+          "hash": "17866138117546000433"
+        },
+        {
+          "file": ".eslintrc.json",
+          "hash": "376086907306918864"
+        },
+        {
+          "file": ".gitignore",
+          "hash": "1100801075487318677"
+        },
+        {
+          "file": ".prettierignore",
+          "hash": "7505926139152980842"
+        },
+        {
+          "file": ".prettierrc",
+          "hash": "16267754514737964994"
+        },
+        {
+          "file": ".vscode/extensions.json",
+          "hash": "14477814476359713685"
+        },
+        {
+          "file": ".vscode/settings.json",
+          "hash": "3092282226325744892"
+        },
+        {
+          "file": "README.md",
+          "hash": "5673450884227955604"
+        },
+        {
+          "file": "certs/Readme.md",
+          "hash": "8969823226788682031"
+        },
+        {
+          "file": "certs/dev_localhost.key",
+          "hash": "15254692636022413589"
+        },
+        {
+          "file": "certs/dev_localhost.pem",
+          "hash": "5444966063110148342"
+        },
+        {
+          "file": "jest.config.ts",
+          "hash": "16473060943491352250"
+        },
+        {
+          "file": "jest.preset.js",
+          "hash": "9430166341120122740",
+          "deps": [
+            "npm:@nx/jest"
+          ]
+        },
+        {
+          "file": "migrations.json",
+          "hash": "519001840363125056"
+        },
+        {
+          "file": "nx.json",
+          "hash": "13243314166204172321"
+        },
+        {
+          "file": "package-lock.json",
+          "hash": "8493668847311044839"
+        },
+        {
+          "file": "package.json",
+          "hash": "14585621454695530636",
+          "deps": [
+            "npm:@angular-devkit/build-angular",
+            "npm:@angular-devkit/core",
+            "npm:@angular-devkit/schematics",
+            "npm:@angular-eslint/eslint-plugin",
+            "npm:@angular-eslint/eslint-plugin-template",
+            "npm:@angular-eslint/template-parser",
+            "npm:@angular/cli",
+            "npm:@angular/compiler-cli",
+            "npm:@angular/language-service",
+            "npm:@nx/eslint-plugin",
+            "npm:@nx/jest",
+            "npm:@nx/js",
+            "npm:@nx/playwright",
+            "npm:@nx/workspace",
+            "npm:@playwright/test",
+            "npm:@schematics/angular",
+            "npm:@types/jest",
+            "npm:@types/node",
+            "npm:@typescript-eslint/eslint-plugin",
+            "npm:@typescript-eslint/parser",
+            "npm:eslint",
+            "npm:eslint-config-prettier",
+            "npm:eslint-plugin-playwright",
+            "npm:jest",
+            "npm:jest-environment-jsdom",
+            "npm:jest-preset-angular",
+            "npm:nx",
+            "npm:prettier",
+            "npm:ts-jest",
+            "npm:ts-node",
+            "npm:typescript",
+            "npm:@nx/eslint",
+            "npm:@angular/animations",
+            "npm:@angular/common",
+            "npm:@angular/compiler",
+            "npm:@angular/core",
+            "npm:@angular/forms",
+            "npm:@angular/platform-browser",
+            "npm:@angular/platform-browser-dynamic",
+            "npm:@angular/router",
+            "npm:@nx/angular",
+            "npm:rxjs",
+            "npm:tslib",
+            "npm:zone.js"
+          ]
+        },
+        {
+          "file": "project.json",
+          "hash": "5629077419394170075"
+        },
+        {
+          "file": "src/app/app.component.html",
+          "hash": "10279484230154097549"
+        },
+        {
+          "file": "src/app/app.component.scss",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "src/app/app.component.ts",
+          "hash": "14262324497914854768",
+          "deps": [
+            "npm:@angular/core",
+            "npm:@angular/router"
+          ]
+        },
+        {
+          "file": "src/app/app.config.ts",
+          "hash": "16618131595114457558",
+          "deps": [
+            "npm:@angular/common",
+            "npm:@angular/core",
+            "npm:@angular/router"
+          ]
+        },
+        {
+          "file": "src/app/app.routes.ts",
+          "hash": "6185150965714414910",
+          "deps": [
+            "npm:@angular/router"
+          ]
+        },
+        {
+          "file": "src/app/getCookie.ts",
+          "hash": "11486248551434153740"
+        },
+        {
+          "file": "src/app/home.component.html",
+          "hash": "6982176511265351860"
+        },
+        {
+          "file": "src/app/home.component.ts",
+          "hash": "17598394451191850717",
+          "deps": [
+            "npm:@angular/common",
+            "npm:@angular/core",
+            "npm:rxjs"
+          ]
+        },
+        {
+          "file": "src/app/secure-api.interceptor.ts",
+          "hash": "2324902579131179716",
+          "deps": [
+            "npm:@angular/common"
+          ]
+        },
+        {
+          "file": "src/assets/.gitkeep",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "src/favicon.ico",
+          "hash": "9303420814833116677"
+        },
+        {
+          "file": "src/index.html",
+          "hash": "3380310766631794486"
+        },
+        {
+          "file": "src/main.ts",
+          "hash": "16635586463787978962",
+          "deps": [
+            "npm:@angular/platform-browser"
+          ]
+        },
+        {
+          "file": "src/styles.scss",
+          "hash": "5195668842064076916"
+        },
+        {
+          "file": "src/test-setup.ts",
+          "hash": "12935735732682149507",
+          "deps": [
+            "npm:jest-preset-angular"
+          ]
+        },
+        {
+          "file": "tsconfig.app.json",
+          "hash": "16616923596177837167"
+        },
+        {
+          "file": "tsconfig.editor.json",
+          "hash": "17511610827034788226"
+        },
+        {
+          "file": "tsconfig.json",
+          "hash": "11981556561100183763"
+        },
+        {
+          "file": "tsconfig.spec.json",
+          "hash": "16287279946930924495"
+        }
+      ],
+      "e2e": [
+        {
+          "file": "e2e/.eslintrc.json",
+          "hash": "6484414998287587581"
+        },
+        {
+          "file": "e2e/playwright.config.ts",
+          "hash": "2406958887436500700",
+          "deps": [
+            "npm:@playwright/test",
+            "npm:@nx/playwright",
+            "npm:@nx/devkit"
+          ]
+        },
+        {
+          "file": "e2e/project.json",
+          "hash": "3987060668065129280"
+        },
+        {
+          "file": "e2e/src/example.spec.ts",
+          "hash": "16019101014373124625",
+          "deps": [
+            "npm:@playwright/test"
+          ]
+        }
+      ]
+    }
+  }
+}
