@@ -38,6 +38,7 @@ Or just open Visual Studio and run the solution.
 
 ## History
 
+- 2024-10-05 Updated packages
 - 2024-09-05 Updated packages
 - 2024-04-08 Updated API
 - 2024-03-24 Updated packages
