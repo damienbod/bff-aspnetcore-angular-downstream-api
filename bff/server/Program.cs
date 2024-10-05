@@ -8,6 +8,7 @@ using Microsoft.IdentityModel.JsonWebTokens;
 using Microsoft.IdentityModel.Logging;
 using Microsoft.IdentityModel.Protocols.OpenIdConnect;
 using Microsoft.IdentityModel.Tokens;
+using NetEscapades.AspNetCore.SecurityHeaders.Infrastructure;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -20,6 +21,15 @@ var services = builder.Services;
 var configuration = builder.Configuration;
 var env = builder.Environment;
 
+var stsServer = configuration["OpenIDConnectSettings:Authority"];
+
+services.AddSecurityHeaderPolicies()
+  .SetPolicySelector((PolicySelectorContext ctx) =>
+  {
+      return SecurityHeadersDefinitions
+        .GetHeaderPolicyCollection(env.IsDevelopment(), stsServer);
+  });
+
 services.AddAntiforgery(options =>
 {
     options.HeaderName = "X-XSRF-TOKEN";
@@ -30,8 +40,6 @@ services.AddAntiforgery(options =>
 
 services.AddHttpClient();
 services.AddOptions();
-
-var stsServer = configuration["OpenIDConnectSettings:Authority"];
 
 services.AddAuthentication(options =>
 {
@@ -90,8 +98,7 @@ else
     app.UseExceptionHandler("/Error");
 }
 
-app.UseSecurityHeaders(SecurityHeadersDefinitions
-    .GetHeaderPolicyCollection(env.IsDevelopment(), stsServer));
+app.UseSecurityHeaders();
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
