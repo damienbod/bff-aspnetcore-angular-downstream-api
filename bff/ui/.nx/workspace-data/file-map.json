@@ -20,7 +20,7 @@
     "@angular-eslint/eslint-plugin": "18.0.1",
     "@angular-eslint/eslint-plugin-template": "18.0.1",
     "@angular-eslint/template-parser": "18.0.1",
-    "@angular/cli": "~18.1.0",
+    "@angular/cli": "~18.2.0",
     "@angular/compiler-cli": "18.2.3",
     "@angular/language-service": "18.2.3",
     "@nx/eslint": "19.8.4",
@@ -51,33 +51,8 @@
   "pathMappings": {},
   "nxJsonPlugins": [],
   "fileMap": {
+    "nonProjectFiles": [],
     "projectFileMap": {
-      "e2e": [
-        {
-          "file": "e2e/.eslintrc.json",
-          "hash": "6484414998287587581"
-        },
-        {
-          "file": "e2e/playwright.config.ts",
-          "hash": "2406958887436500700",
-          "deps": [
-            "npm:@playwright/test",
-            "npm:@nx/playwright",
-            "npm:@nx/devkit"
-          ]
-        },
-        {
-          "file": "e2e/project.json",
-          "hash": "3987060668065129280"
-        },
-        {
-          "file": "e2e/src/example.spec.ts",
-          "hash": "16019101014373124625",
-          "deps": [
-            "npm:@playwright/test"
-          ]
-        }
-      ],
       "ui": [
         {
           "file": ".eslintignore",
@@ -93,11 +68,11 @@
         },
         {
           "file": ".gitignore",
-          "hash": "1100801075487318677"
+          "hash": "200405160798019318"
         },
         {
           "file": ".prettierignore",
-          "hash": "7505926139152980842"
+          "hash": "6585059230528163571"
         },
         {
           "file": ".prettierrc",
@@ -148,11 +123,11 @@
         },
         {
           "file": "package-lock.json",
-          "hash": "4146836411766501748"
+          "hash": "5621033993674758550"
         },
         {
           "file": "package.json",
-          "hash": "4368230244841184278",
+          "hash": "8526322526001643556",
           "deps": [
             "npm:@angular-devkit/build-angular",
             "npm:@angular-devkit/core",
@@ -163,6 +138,7 @@
             "npm:@angular/cli",
             "npm:@angular/compiler-cli",
             "npm:@angular/language-service",
+            "npm:@nx/eslint",
             "npm:@nx/eslint-plugin",
             "npm:@nx/jest",
             "npm:@nx/js",
@@ -174,6 +150,7 @@
             "npm:@types/node",
             "npm:@typescript-eslint/eslint-plugin",
             "npm:@typescript-eslint/parser",
+            "npm:@typescript-eslint/utils",
             "npm:eslint",
             "npm:eslint-config-prettier",
             "npm:eslint-plugin-playwright",
@@ -185,7 +162,6 @@
             "npm:ts-jest",
             "npm:ts-node",
             "npm:typescript",
-            "npm:@nx/eslint",
             "npm:@angular/animations",
             "npm:@angular/common",
             "npm:@angular/compiler",
@@ -306,8 +282,33 @@
           "file": "tsconfig.spec.json",
           "hash": "16287279946930924495"
         }
+      ],
+      "e2e": [
+        {
+          "file": "e2e/.eslintrc.json",
+          "hash": "6484414998287587581"
+        },
+        {
+          "file": "e2e/playwright.config.ts",
+          "hash": "2406958887436500700",
+          "deps": [
+            "npm:@playwright/test",
+            "npm:@nx/playwright",
+            "npm:@nx/devkit"
+          ]
+        },
+        {
+          "file": "e2e/project.json",
+          "hash": "3987060668065129280"
+        },
+        {
+          "file": "e2e/src/example.spec.ts",
+          "hash": "16019101014373124625",
+          "deps": [
+            "npm:@playwright/test"
+          ]
+        }
       ]
-    },
-    "nonProjectFiles": []
+    }
   }
 }
