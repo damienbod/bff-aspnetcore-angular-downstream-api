@@ -38,6 +38,7 @@ Or just open Visual Studio and run the solution.
 
 ## History
 
+- 2024-10-06 Updated Abgular 18.2.7
 - 2024-10-05 Updated packages
 - 2024-09-05 Updated packages
 - 2024-04-08 Updated API
@@ -45,6 +46,14 @@ Or just open Visual Studio and run the solution.
 - 2024-01-22 Updated packages
 - 2023-12-30 Open Redirect protection for login
 - 2023-11-16 .NET 8 updates
+
+## Angular nx Updates
+
+```
+nx migrate latest
+
+nx migrate --run-migrations=migrations.json
+```
 
 ## Links
 
