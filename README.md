@@ -38,7 +38,8 @@ Or just open Visual Studio and run the solution.
 
 ## History
 
-- 2024-10-06 Updated Abgular 18.2.7
+- 2024-10-17 Updated Security headers performance fix, packages updated
+- 2024-10-06 Updated Angular 18.2.7
 - 2024-10-05 Updated packages
 - 2024-09-05 Updated packages
 - 2024-04-08 Updated API
