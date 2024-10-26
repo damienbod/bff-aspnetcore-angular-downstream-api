@@ -13,12 +13,10 @@ namespace OpeniddictServer;
 
 internal static class StartupExtensions
 {
-    private static IWebHostEnvironment _env;
     public static WebApplication ConfigureServices(this WebApplicationBuilder builder)
     {
         var services = builder.Services;
         var configuration = builder.Configuration;
-        _env = builder.Environment;
 
         services.AddControllersWithViews();
         services.AddRazorPages();
@@ -149,7 +147,6 @@ internal static class StartupExtensions
         // Note: in a real world application, this step should be part of a setup script.
         services.AddHostedService<Worker>();
 
-
         return builder.Build();
     }
 
@@ -160,7 +157,7 @@ internal static class StartupExtensions
 
         app.UseSerilogRequestLogging();
 
-        if (_env!.IsDevelopment())
+        if (app.Environment.IsDevelopment())
         {
             app.UseDeveloperExceptionPage();
             app.UseMigrationsEndPoint();
