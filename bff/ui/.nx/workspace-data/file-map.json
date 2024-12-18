@@ -1,53 +1,6 @@
 {
   "version": "6.0",
-  "nxVersion": "19.8.4",
-  "deps": {
-    "@angular/animations": "18.2.3",
-    "@angular/common": "18.2.3",
-    "@angular/compiler": "18.2.3",
-    "@angular/core": "18.2.3",
-    "@angular/forms": "18.2.3",
-    "@angular/platform-browser": "18.2.3",
-    "@angular/platform-browser-dynamic": "18.2.3",
-    "@angular/router": "18.2.3",
-    "@nx/angular": "19.8.4",
-    "rxjs": "~7.8.0",
-    "tslib": "^2.3.0",
-    "zone.js": "0.14.4",
-    "@angular-devkit/build-angular": "18.2.3",
-    "@angular-devkit/core": "18.2.3",
-    "@angular-devkit/schematics": "18.2.3",
-    "@angular-eslint/eslint-plugin": "18.0.1",
-    "@angular-eslint/eslint-plugin-template": "18.0.1",
-    "@angular-eslint/template-parser": "18.0.1",
-    "@angular/cli": "~18.2.0",
-    "@angular/compiler-cli": "18.2.3",
-    "@angular/language-service": "18.2.3",
-    "@nx/eslint": "19.8.4",
-    "@nx/eslint-plugin": "19.8.4",
-    "@nx/jest": "19.8.4",
-    "@nx/js": "19.8.4",
-    "@nx/playwright": "19.8.4",
-    "@nx/workspace": "19.8.4",
-    "@playwright/test": "^1.36.0",
-    "@schematics/angular": "18.2.3",
-    "@types/jest": "29.5.12",
-    "@types/node": "^18.16.9",
-    "@typescript-eslint/eslint-plugin": "7.16.0",
-    "@typescript-eslint/parser": "7.16.0",
-    "@typescript-eslint/utils": "^7.16.0",
-    "eslint": "8.57.0",
-    "eslint-config-prettier": "9.0.0",
-    "eslint-plugin-playwright": "^0.15.3",
-    "jest": "29.7.0",
-    "jest-environment-jsdom": "29.7.0",
-    "jest-preset-angular": "14.1.1",
-    "nx": "19.8.4",
-    "prettier": "^2.6.2",
-    "ts-jest": "^29.1.0",
-    "ts-node": "10.9.1",
-    "typescript": "5.5.4"
-  },
+  "nxVersion": "20.2.2",
   "pathMappings": {},
   "nxJsonPlugins": [],
   "fileMap": {
@@ -64,7 +17,7 @@
         },
         {
           "file": ".eslintrc.json",
-          "hash": "376086907306918864"
+          "hash": "9242756071079892743"
         },
         {
           "file": ".gitignore",
@@ -115,19 +68,19 @@
         },
         {
           "file": "migrations.json",
-          "hash": "519001840363125056"
+          "hash": "15091705571680545762"
         },
         {
           "file": "nx.json",
-          "hash": "13243314166204172321"
+          "hash": "12804486316074355004"
         },
         {
           "file": "package-lock.json",
-          "hash": "5621033993674758550"
+          "hash": "6962243849572980153"
         },
         {
           "file": "package.json",
-          "hash": "8526322526001643556",
+          "hash": "4643674227338616082",
           "deps": [
             "npm:@angular-devkit/build-angular",
             "npm:@angular-devkit/core",
@@ -190,7 +143,7 @@
         },
         {
           "file": "src/app/app.component.ts",
-          "hash": "14262324497914854768",
+          "hash": "10732712418920851333",
           "deps": [
             "npm:@angular/core",
             "npm:@angular/router"
@@ -222,7 +175,7 @@
         },
         {
           "file": "src/app/home.component.ts",
-          "hash": "17598394451191850717",
+          "hash": "15179264176680036585",
           "deps": [
             "npm:@angular/common",
             "npm:@angular/core",
