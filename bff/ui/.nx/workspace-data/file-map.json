@@ -6,6 +6,32 @@
   "fileMap": {
     "nonProjectFiles": [],
     "projectFileMap": {
+      "e2e": [
+        {
+          "file": "e2e/.eslintrc.json",
+          "hash": "6484414998287587581"
+        },
+        {
+          "file": "e2e/playwright.config.ts",
+          "hash": "2406958887436500700",
+          "deps": [
+            "npm:@playwright/test",
+            "npm:@nx/playwright",
+            "npm:@nx/devkit"
+          ]
+        },
+        {
+          "file": "e2e/project.json",
+          "hash": "3987060668065129280"
+        },
+        {
+          "file": "e2e/src/example.spec.ts",
+          "hash": "16019101014373124625",
+          "deps": [
+            "npm:@playwright/test"
+          ]
+        }
+      ],
       "ui": [
         {
           "file": ".eslintignore",
@@ -234,32 +260,6 @@
         {
           "file": "tsconfig.spec.json",
           "hash": "16287279946930924495"
-        }
-      ],
-      "e2e": [
-        {
-          "file": "e2e/.eslintrc.json",
-          "hash": "6484414998287587581"
-        },
-        {
-          "file": "e2e/playwright.config.ts",
-          "hash": "2406958887436500700",
-          "deps": [
-            "npm:@playwright/test",
-            "npm:@nx/playwright",
-            "npm:@nx/devkit"
-          ]
-        },
-        {
-          "file": "e2e/project.json",
-          "hash": "3987060668065129280"
-        },
-        {
-          "file": "e2e/src/example.spec.ts",
-          "hash": "16019101014373124625",
-          "deps": [
-            "npm:@playwright/test"
-          ]
         }
       ]
     }
