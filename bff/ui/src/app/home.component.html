@@ -1,47 +1,40 @@
 <h2>BFF OpenIddict Security architecture with Angular nx</h2>
 
-<ng-container
-  *ngIf="userProfileClaims$ | async as userProfileClaims; else noAuth"
->
-  <div *ngIf="userProfileClaims?.isAuthenticated; else noAuth">
-    <button (click)="getDirectApiData()">get data from API direct</button>
-    <button (click)="getDownstreamApiData()">
-      get data from downstream API
-    </button>
-    <form method="post" action="api/Account/Logout">
-      <button class="btn btn-link" type="submit">Sign out</button>
-    </form>
-  </div>
-
+@if (userProfileClaims$ | async; as userProfileClaims) {
+  @if (userProfileClaims?.isAuthenticated) {
+    <div>
+      <button (click)="getDirectApiData()">get data from API direct</button>
+      <button (click)="getDownstreamApiData()">
+        get data from downstream API
+      </button>
+      <form method="post" action="api/Account/Logout">
+        <button class="btn btn-link" type="submit">Sign out</button>
+      </form>
+    </div>
+  } @else {
+    <a class="btn btn-link" href="api/Account/Login">Log in</a>
+  }
   <hr />
-
   <h2>User profile:</h2>
   <pre>{{ userProfileClaims | json }}</pre>
-
   <hr />
-
   <h2>get direct data using API:</h2>
   <pre>{{ dataFromAzureProtectedApi$ | async | json }}</pre>
-
   <h2>get downstream data using API:</h2>
   <pre>{{ downstreamApiData$ | async | json }}</pre>
-
   <hr />
-
   <pre>
-vimeo video in a iframe => security protections weakened to allow this... </pre
-  >
+    vimeo video in a iframe => security protections weakened to allow this... </pre
+    >
+    <iframe
+      src="https://player.vimeo.com/video/233915427?h=95757c6f14"
+      width="640"
+      height="360"
+      frameborder="0"
+      allow="autoplay; fullscreen; picture-in-picture"
+      allowfullscreen
+    ></iframe>
+  } @else {
+    <a class="btn btn-link" href="api/Account/Login">Log in</a>
+  }
 
-  <iframe
-    src="https://player.vimeo.com/video/233915427?h=95757c6f14"
-    width="640"
-    height="360"
-    frameborder="0"
-    allow="autoplay; fullscreen; picture-in-picture"
-    allowfullscreen
-  ></iframe>
-</ng-container>
-
-<ng-template #noAuth>
-  <a class="btn btn-link" href="api/Account/Login">Log in</a>
-</ng-template>
