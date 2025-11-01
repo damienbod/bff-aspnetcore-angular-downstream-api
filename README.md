@@ -38,6 +38,7 @@ Or just open Visual Studio and run the solution.
 
 ## History
 
+- 2025-11-01 Updated .NET 9 packages, Angular 20.3.0
 - 2025-08-03 .NET 9, Angular 20.1.4
 - 2024-12-18 .NET 9, Angular 19, OpenIddict 6.0
 - 2024-10-26 Code improvements
