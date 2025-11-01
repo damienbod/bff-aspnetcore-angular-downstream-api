@@ -15,7 +15,7 @@ https://damienbod.com/2024/04/08/bff-secured-asp-net-core-application-using-down
 Start the Angular project from the **ui** folder
 
 ```
-nx serve --ssl
+ng serve --ssl
 ```
 
 Start the ASP.NET Core projects from the **server** folder and the **identityProvider**
@@ -32,8 +32,7 @@ Or just open Visual Studio and run the solution.
 - Yarp.ReverseProxy
 - OpenIddict
 - ASP.NET Core
-- Angular 
-- Nx
+- Angular, Angular CLI
 - OpenIddict
 
 ## History
@@ -52,12 +51,14 @@ Or just open Visual Studio and run the solution.
 - 2023-12-30 Open Redirect protection for login
 - 2023-11-16 .NET 8 updates
 
-## Angular nx Updates
+## Angular CLI Updates
 
 ```
-nx migrate latest
+npm install -g @angular/cli latest
 
-nx migrate --run-migrations=migrations.json
+ng update
+
+ng update @angular/cli @angular/core
 ```
 
 ## Links
