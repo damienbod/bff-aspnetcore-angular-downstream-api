@@ -23,13 +23,6 @@ var configuration = builder.Configuration;
 var stsServer = configuration["OpenIDConnectSettings:Authority"];
 
 services.AddSecurityHeaderPolicies()
-  .SetPolicySelector((PolicySelectorContext ctx) =>
-  {
-      return SecurityHeadersDefinitions.GetHeaderPolicyCollection(
-          builder.Environment.IsDevelopment(), stsServer);
-  });
-
-services.AddSecurityHeaderPolicies()
     .SetPolicySelector(ctx =>
     {
         if (ctx.HttpContext.Request.Path.StartsWithSegments("/api"))
@@ -38,8 +31,7 @@ services.AddSecurityHeaderPolicies()
         }
 
         return SecurityHeadersDefinitions.GetHeaderPolicyCollection(
-          builder.Environment.IsDevelopment(),
-          configuration["MicrosoftEntraID:Instance"]);
+            builder.Environment.IsDevelopment(), stsServer);
     });
 
 services.AddAntiforgery(options =>
