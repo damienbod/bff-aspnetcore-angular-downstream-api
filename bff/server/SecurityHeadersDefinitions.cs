@@ -27,19 +27,18 @@ public static class SecurityHeadersDefinitions
                 builder.AddFormAction().Self().From(idpHost);
                 builder.AddFontSrc().Self();
                 builder.AddBaseUri().Self();
-                builder.AddFrameAncestors().None();
+  
+                builder.AddFrameAncestors()
+                   .From("https://localhost:5001");
 
-                if (isDev)
-                {
-                    builder.AddStyleSrc().Self().UnsafeInline();
-                }
-                else
-                {
-                    builder.AddStyleSrc().WithNonce().UnsafeInline();
-                }
+                builder.AddStyleSrc()
+                    .Self()
+                    .UnsafeInline();
 
-                builder.AddScriptSrcElem().WithNonce().UnsafeInline();
-                builder.AddScriptSrc().WithNonce().UnsafeInline();
+                // disable for video stream, weak security...
+                //builder.AddScriptSrc()
+                //    .WithNonce()
+                //    .UnsafeInline();
             })
             .RemoveServerHeader()
             .AddPermissionsPolicyWithDefaultSecureDirectives();
