@@ -29,6 +29,19 @@ services.AddSecurityHeaderPolicies()
           builder.Environment.IsDevelopment(), stsServer);
   });
 
+services.AddSecurityHeaderPolicies()
+    .SetPolicySelector(ctx =>
+    {
+        if (ctx.HttpContext.Request.Path.StartsWithSegments("/api"))
+        {
+            return ApiSecurityHeadersDefinitions.GetHeaderPolicyCollection(builder.Environment.IsDevelopment());
+        }
+
+        return SecurityHeadersDefinitions.GetHeaderPolicyCollection(
+          builder.Environment.IsDevelopment(),
+          configuration["MicrosoftEntraID:Instance"]);
+    });
+
 services.AddAntiforgery(options =>
 {
     options.HeaderName = "X-XSRF-TOKEN";

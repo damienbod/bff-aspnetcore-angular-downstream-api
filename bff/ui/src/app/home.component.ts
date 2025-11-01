@@ -22,11 +22,11 @@ interface UserProfile {
 })
 export class HomeComponent implements OnInit {
   private readonly httpClient = inject(HttpClient);
-  dataFromAzureProtectedApi$: Observable<string[]>;
-  downstreamApiData$: Observable<string[]>;
+  dataFromAzureProtectedApi$?: Observable<string[]>;
+  downstreamApiData$?: Observable<string[]>;
 
-  dataGraphApiCalls$: Observable<string[]>;
-  userProfileClaims$: Observable<UserProfile>;
+  dataGraphApiCalls$?: Observable<string[]>;
+  userProfileClaims$?: Observable<UserProfile>;
 
   ngOnInit() {
     console.info('home component');
